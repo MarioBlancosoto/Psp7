@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class Buzon {
     
-    String entrada;
+    String entrada="";
     
     
     
@@ -17,20 +17,23 @@ public class Buzon {
     
     
     
-    public synchronized void escribirLer(String entrada){
-       
+    public synchronized void escribirLer(Boolean aux){
+        
+     
       
-        if(entrada==""){
-            
-            System.out.println("mensaje enviado");
+        if(aux){
+           entrada = " MErda";
+            System.out.println("Escribindo mensaxe");
+            System.out.println("Enviando...");
             notify();
             
         }else{
-            
+            entrada="";
             System.out.println("leendo mensaxe"); 
             
             
             while(entrada.length()>0){
+                System.out.println("leendo mensaxe "+entrada);
                 try {
                     System.out.println("Buzón cheo,esperando...");
                     wait();
