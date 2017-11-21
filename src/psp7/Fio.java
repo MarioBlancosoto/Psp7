@@ -9,11 +9,9 @@ import java.util.logging.Logger;
 public class Fio extends Thread{
    
    Buzon bz;
-   String entrada;
    Boolean aux;
     public Fio(Buzon bz,Boolean aux){
         this.bz =bz;
-        this.bz.entrada = entrada;
         this.aux = aux;
         
         
@@ -21,7 +19,7 @@ public class Fio extends Thread{
     }
     public void run(){
         
-        for(int i =0;i<20;i++){
+        for(int i =0;i<5;i++){
             
             bz.escribirLer(aux);
             

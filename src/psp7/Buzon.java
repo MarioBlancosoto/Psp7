@@ -22,26 +22,43 @@ public class Buzon {
      
       
         if(aux){
-           entrada = " MErda";
-            System.out.println("Escribindo mensaxe");
-            System.out.println("Enviando...");
-            notify();
-            
-        }else{
-            entrada="";
-            System.out.println("leendo mensaxe"); 
-            
-            
-            while(entrada.length()>0){
-                System.out.println("leendo mensaxe "+entrada);
+           
+              
+            while(entrada.length()==0){
+                
                 try {
-                    System.out.println("Buzón cheo,esperando...");
+                      System.out.println("Buzón lleno");
                     wait();
-                    
+                  
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Buzon.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+            
+            System.out.println("leer mensaxe :"+entrada);
+            entrada="";
+            notify();
+        }else{
+            
+            
+            
+         
+            while(entrada.length()>0){
+               
+              
+                try {
+                    System.out.println("Buzón vacío, escribindo mensaxe...");
+                    wait();
+                    
+                   
+                  
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Buzon.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+         entrada = "Esto es un mensaje";
+         notify();
         }
         
         
